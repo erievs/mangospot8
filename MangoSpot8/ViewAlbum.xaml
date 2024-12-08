@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MangoSpot8.ViewAlbum"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+           
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12.5,0,12,0">
+
+            <StackPanel Height="115" Margin="0,20,0,0" VerticalAlignment="Top">
+             
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5,0,10,0">
+
+                    <Image Width="87.5" Height="90" Name="AlbumImage"
+                    VerticalAlignment="Center" Stretch="UniformToFill" HorizontalAlignment="Left" Margin="0,5,10,0"/>
+
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,0" VerticalAlignment="Top" >
+
+                        <TextBlock Text="" Name="Aurthor" FontSize="26" FontWeight="Thin" 
+                       Foreground="#222222" TextWrapping="Wrap"/>
+
+                        <TextBlock Text="" Name="Title" FontSize="16" FontWeight="Thin" 
+                       Foreground="#222222" TextWrapping="Wrap"/>
+                        
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <ScrollViewer x:Name="SongScrollViewer" Margin="0,130,12,0" VerticalScrollBarVisibility="Auto">
+                <ItemsControl x:Name="SongItemsControl" Margin="0, 0, 0, 0" ManipulationDelta="SongsItemsControl_ManipulationDelta">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0, 17, 0, 0" Tag="{Binding SongId}" Tap="Song_Clicked">
+                                <Grid Width="Auto" Height="Auto" HorizontalAlignment="Left">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Canvas Grid.Column="0" Margin="0,-5,0,0" Width="Auto" Height="Auto">
+                                        <Image Source="/Assets/AppBarMusic.png" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                                    </Canvas>
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="45,0,0,0">
+                                        <TextBlock Foreground="#222222" FontSize="26" FontWeight="Thin" TextWrapping="Wrap" Text="{Binding Name}" Style="{StaticResource PhoneTextNormalStyle}" Width="375"/>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <TextBlock Foreground="#222222" FontSize="16" Text="{Binding Author}" Style="{StaticResource PhoneTextNormalStyle}" Width="Auto">
+                                                <TextBlock.FontWeight>
+                                                    <FontWeight>Bold</FontWeight>
+                                                </TextBlock.FontWeight>
+                                            </TextBlock>
+                                            <TextBlock Foreground="#222222" Margin="-5,0,0,0" FontSize="16" Text="{Binding SongName}" Style="{StaticResource PhoneTextNormalStyle}" Width="Auto"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

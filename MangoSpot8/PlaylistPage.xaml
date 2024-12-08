@@ -1,0 +1,63 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MangoSpot8.PlaylistPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Foreground="#222222" Text="PLAYLISTS" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+           <ScrollViewer x:Name="PlaylistScrollViewer" Margin="12,-20,12,0" VerticalScrollBarVisibility="Auto">
+                <ItemsControl x:Name="PlaylistItemsControl" Margin="0, 0, 0, 0" ManipulationDelta="PlaylistItemsControl_ManipulationDelta">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Tap="PlayList_Tapped" Orientation="Horizontal" Margin="0, 17, 0, 0">
+                                <Grid Width="Auto" Height="Auto" HorizontalAlignment="Left">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Canvas Grid.Column="0" Margin="0,2.5,0,0" Width="Auto" Height="Auto">
+                                        <Image Source="/Assets/AppBarBase.png" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                                        <Image Source="/Assets/AppBarMusic.png" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                                    </Canvas>
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="50,0,0,0">
+                                        <TextBlock Foreground="#222222" FontSize="26" FontWeight="Thin" TextWrapping="Wrap" Text="{Binding Name}" Style="{StaticResource PhoneTextNormalStyle}" Width="375"/>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <TextBlock Foreground="#222222" FontSize="16" Text="{Binding TrackCount}" Style="{StaticResource PhoneTextNormalStyle}" Width="Auto">
+                                                <TextBlock.FontWeight>
+                                                    <FontWeight>Bold</FontWeight>
+                                                </TextBlock.FontWeight>
+                                            </TextBlock>
+                                            <TextBlock Foreground="#222222" Margin="-10,0,0,0" FontSize="16" Text="{Binding Author}" Style="{StaticResource PhoneTextNormalStyle}" Width="Auto"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+        
+    </Grid>
+
+</phone:PhoneApplicationPage>

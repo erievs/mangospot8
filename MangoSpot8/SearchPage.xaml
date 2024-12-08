@@ -1,0 +1,116 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MangoSpot8.SearchPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox 
+            x:Name="searchBox"
+            FontSize="24" 
+            IsHitTestVisible="True"
+            BorderBrush="Transparent"
+            Background="#FA892D"
+            FontWeight="Bold" 
+            HorizontalAlignment="Stretch" 
+            Foreground="#f5f5f5" 
+            CaretBrush="White" 
+            Text=" search"
+            Height="75" 
+            Margin="0,15,0,0"
+            VerticalAlignment="Top" 
+            Width="Auto" 
+            GotFocus="searchBox_GotFocus"
+            KeyDown="searchBox_KeyDown"
+            LostFocus="searchBox_LostFocus"
+            Grid.Row="0"/>
+
+        <phone:Pivot Loaded="Pivot_Loaded" Margin="0,71,0,10" Grid.RowSpan="2">
+
+            <phone:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontWeight="Thin" FontSize="50" Margin="0,0,0,0" Foreground="#222222" />
+                </DataTemplate>
+            </phone:Pivot.HeaderTemplate>
+            
+            <phone:PivotItem Header="albums" Margin="0,0,0,10">
+                <ScrollViewer x:Name="AlbumScrollViewer" Margin="25,5,0,0" VerticalScrollBarVisibility="Auto">
+                    <ItemsControl x:Name="AlbumItemsControl" Margin="0, 0, 0, 0" ManipulationDelta="AlbumItemsControl_ManipulationDelta" 
+                        ItemsSource="{Binding AlbumsCollection}">
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Height="75" Margin="0,0,0,15" Tap="Album_Tapped">
+                                    <Image Width="75" Stretch="UniformToFill" Height="75" 
+                                           Source="{Binding ImageUrl}" 
+                                           VerticalAlignment="Center" Margin="0,0,7,0"/>
+                                    <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding Name}" Width="Auto" TextWrapping="Wrap" TextTrimming="WordEllipsis" 
+                                                   Margin="0,-7.5,0,0" FontSize="24" FontWeight="Thin" 
+                                                   Foreground="Black" HorizontalAlignment="Left"/>
+                                        <TextBlock Text="{Binding Author}" FontSize="16" Foreground="#222222" 
+                                                   HorizontalAlignment="Left" Margin="0,0,0,0"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="tracks" Margin="0,0,0,10">
+                <ScrollViewer x:Name="SongScrollViewer" Margin="25,5,0,0" VerticalScrollBarVisibility="Auto">
+                    <ItemsControl x:Name="SongItemsControl" Margin="0, 0, 0, 0" ManipulationDelta="SongsItemsControl_ManipulationDelta">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 0" Tap="Song_Tapped">
+                                    <Grid Width="Auto" Height="Auto" HorizontalAlignment="Left">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Canvas Grid.Column="0" Margin="0,-5,0,0" Width="Auto" Height="Auto">
+                                            <Image Source="/Assets/AppBarMusic.png" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                                        </Canvas>
+                                        <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="45,0,0,0">
+                                            <TextBlock Foreground="#222222" FontSize="26" FontWeight="Thin" TextWrapping="Wrap" 
+                                                       Text="{Binding Name}" Style="{StaticResource PhoneTextNormalStyle}" Width="375"/>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                <TextBlock Foreground="#222222" FontSize="16" Text="{Binding Author}" 
+                                                           Style="{StaticResource PhoneTextNormalStyle}" Width="Auto">
+                                                    <TextBlock.FontWeight>
+                                                        <FontWeight>Bold</FontWeight>
+                                                    </TextBlock.FontWeight>
+                                                </TextBlock>
+                                                <TextBlock Foreground="#222222" Margin="-5,0,0,0" FontSize="16" 
+                                                           Text="{Binding SongName}" Style="{StaticResource PhoneTextNormalStyle}" Width="Auto"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+        </phone:Pivot>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

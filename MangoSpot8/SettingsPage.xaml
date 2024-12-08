@@ -1,0 +1,57 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MangoSpot8.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="Black"
+    Background="White"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Foreground="#222222" Text="SETTINGS" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,12">
+                <toolkit:ToggleSwitch x:Name="toggleLowQuality"
+                          Header="Low Quality Audio"
+                          Grid.Row="1"
+                          Foreground="#222222"
+                          Margin="9,0,0,0"
+                          IsChecked="{Binding LowQualityAudio, Mode=TwoWay}" 
+                          Checked="quailty_Checked"
+                          Unchecked="quailty_Unchecked">
+
+                    <toolkit:ToggleSwitch.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontWeight="Thin" Foreground="#222222"/>
+                        </DataTemplate>
+                    </toolkit:ToggleSwitch.HeaderTemplate>
+                </toolkit:ToggleSwitch>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,12">
+                <TextBox Foreground="#222222" FontWeight="Normal" FontSize="20" Text="App Version:    b1.0.0"></TextBox>
+            </StackPanel>
+
+        </Grid>
+        
+    </Grid>
+</phone:PhoneApplicationPage>

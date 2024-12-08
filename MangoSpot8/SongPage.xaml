@@ -1,0 +1,53 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MangoSpot8.SongPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12.5,0,12,0">
+
+            <StackPanel Name="Metadata" Height="Auto" Margin="0,20,0,0" VerticalAlignment="Top">
+                <TextBlock FontWeight="Thin" Foreground="#222222" Margin="0,0,0,0" MaxHeight="125" FontSize="46" Name="SongTitle" Text="" TextWrapping="Wrap"/>
+
+                <TextBlock FontWeight="Thin" Foreground="#222222" Margin="2.5,0,0,0" MaxHeight="50" FontSize="22" Name="SongAurthor" Text="" TextWrapping="Wrap"/>
+            </StackPanel>
+                  
+            <StackPanel Name="Album" Margin="2.5,0,0,150" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Image Width="250" Stretch="UniformToFill" Height="250" Name="AlbumImage" />
+            </StackPanel>
+
+            <StackPanel Name="ProgressBar" Height="Auto" Margin="0,20,0,5" VerticalAlignment="Bottom">
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,100,0">
+
+                    <TextBlock Text="0:00" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                   FontSize="18" Name="CurrentTime" FontWeight="Light" Foreground="#222222" />
+
+                    <ProgressBar Name="SongProgressBar" Height="4" VerticalAlignment="Center" 
+                     HorizontalAlignment="Stretch" Margin="40,13,31,10" Minimum="0" Maximum="100" 
+                     Value="0" Foreground="#FA892D" Background="LightGray" />
+
+                    <TextBlock Text="0:00" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                   FontSize="18" Name="EndTime" Margin="0,0,-10,0" FontWeight="Light" Foreground="#222222" />
+                </Grid>
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
