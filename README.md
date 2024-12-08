@@ -18,6 +18,10 @@ Windows 8 Support
 
 And more!
 
+# Features Dropped
+
+- CVS importing, it requires some effort to port it over from winrt, and it's not worth it using the web panel is far easier, and you'll need another device anyways.
+
 # Other Mangospot Versions #
 
 https://github.com/erievs/mangospot
