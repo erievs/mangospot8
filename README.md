@@ -24,6 +24,8 @@ https://github.com/erievs/mangospot
 
 # Things to Know #
 
+- You probbaly need Premium, I am almost 100% sure. You can try it just don't complain to me if it doesn't work. It depends on the web apis for spotify.
+
 - MangoSpot WinRT is what I now called the orginal build of MangoSpot which only supports Windows 8.1, of course this isn't what it was called at launch.
 
 - Just like with MangoSpot WiRT, songs are fetched from YouTube, filtered for the best result, in MangoSpot8 Beta 1.1.0 we will switch to using YouTube music API and user agent, which will improve it even more.
@@ -32,6 +34,8 @@ However, it is pretty good of course they will be a couple of missed songs or no
 - Darkmode will be coming soon.
 
 - The UI can be a bit jank (sorry).
+
+- Not everything is done yet, sorry that liking songs and playlists are not in just yet (you can view them of course!).
 
 - No auto play or skiping songs in a playlist for now, dont worry however this will be in Beta 1.1.0, the next update (unless there is A MAJOR issue).
 
