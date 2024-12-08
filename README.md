@@ -35,6 +35,8 @@ However, it is pretty good of course they will be a couple of missed songs or no
 
 - The UI can be a bit jank (sorry).
 
+- Position doesn't recover when exiting app (easy fix will be in Beta 1.1.0)
+
 - Not everything is done yet, sorry that liking songs and playlists are not in just yet (you can view them of course!).
 
 - No auto play or skiping songs in a playlist for now, dont worry however this will be in Beta 1.1.0, the next update (unless there is A MAJOR issue).
@@ -61,6 +63,6 @@ However, it is pretty good of course they will be a couple of missed songs or no
 
 # Dependencies #
 
-Should all be included (for now) as of beta 1.0.0 .
+Should all be included (for now) as of Beta 1.0.1 .
 
 
