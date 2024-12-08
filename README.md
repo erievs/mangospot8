@@ -24,6 +24,8 @@ https://github.com/erievs/mangospot
 
 # Things to Know #
 
+- Before making an issue PLEASE read this.
+
 - You probbaly need Premium, I am almost 100% sure. You can try it just don't complain to me if it doesn't work. It depends on the web apis for spotify.
 
 - MangoSpot WinRT is what I now called the orginal build of MangoSpot which only supports Windows 8.1, of course this isn't what it was called at launch.
