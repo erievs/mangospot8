@@ -18,6 +18,10 @@ Windows 8 Support
 
 And more!
 
+# Help Wanted
+
+- Logo, I may work on one at some point but if anyone could help that'd be nice since I'm not a great artist.
+
 # Features Dropped
 
 - CVS importing, it requires some effort to port it over from winrt, and it's not worth it using the web panel is far easier, and you'll need another device anyways.
