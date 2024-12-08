@@ -48,7 +48,7 @@
 
 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,12">
-                <TextBox Foreground="#222222" FontWeight="Normal" FontSize="20" Text="App Version:    b1.0.0"></TextBox>
+                <TextBox Foreground="#222222" FontWeight="Normal" FontSize="20" Text="App Version:    b1.0.1"></TextBox>
             </StackPanel>
 
         </Grid>

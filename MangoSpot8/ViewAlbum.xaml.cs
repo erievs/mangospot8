@@ -241,7 +241,7 @@ namespace MangoSpot8
                             SongName = item.SelectToken("track.name")?.ToString(),
                             Author = item.SelectToken("track.artists[0].name")?.ToString(),
                             Name = item.SelectToken("track.name")?.ToString(),
-                            SongId = item.SelectToken("id")?.ToString()
+                            SongId = item.SelectToken("track.id")?.ToString()
                         }).ToList();
 
                         foreach (var song in songs)

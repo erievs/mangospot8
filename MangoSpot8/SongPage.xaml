@@ -27,7 +27,7 @@
                 <TextBlock FontWeight="Thin" Foreground="#222222" Margin="2.5,0,0,0" MaxHeight="50" FontSize="22" Name="SongAurthor" Text="" TextWrapping="Wrap"/>
             </StackPanel>
                   
-            <StackPanel Name="Album" Margin="2.5,0,0,150" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <StackPanel Name="Album" Margin="2.5,10,0,150" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <Image Width="250" Stretch="UniformToFill" Height="250" Name="AlbumImage" />
             </StackPanel>
 
