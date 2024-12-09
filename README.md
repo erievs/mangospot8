@@ -41,15 +41,11 @@ https://github.com/erievs/mangospot
 - Just like with MangoSpot WiRT, songs are fetched from YouTube, filtered for the best result, in MangoSpot8 Beta 1.1.0 we will switch to using YouTube music API and user agent, which will improve it even more.
 However, it is pretty good of course they will be a couple of missed songs or not 100% the right version, but beats only 30 seconds of audio, and again will be better as the updates go one. 
 
-- The progress bar needs margin to look good on some devices.
-
 - Cannot fast forward song will be fixed beta 1.1.0b.
 
 - Darkmode will be coming soon.
 
 - The UI can be a bit jank (sorry).
-
-- Position doesn't recover when exiting app (easy fix will be in Beta 1.1.0)
 
 - Not everything is done yet, sorry that liking songs and playlists are not in just yet (you can view them of course!).
 
